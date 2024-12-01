@@ -46,7 +46,6 @@
 //         return NextResponse.json("Error :"+error, { status: 500 });
 //     }
 // }
-
 import { connect } from "@/dbconnection/dbconfig";
 import User from "@/models/usermodel";
 import { NextRequest, NextResponse } from "next/server";
@@ -125,3 +124,4 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: "Something went wrong. Please try again later." }, { status: 500 });
     }
 }
+
