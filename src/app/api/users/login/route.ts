@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
 
         let token;
         try {
-            token = jwt.sign(tokendata, process.env.TOKEN_SECRET!, { expiresIn: "1d" });
+            token = jwt.sign(tokendata, process.env.Token_SECRET!, { expiresIn: "1d" });
         } catch (jwtError) {
             console.error("JWT signing failed:", jwtError);
             return NextResponse.json({ error: "Failed to sign JWT" }, { status: 500 });
