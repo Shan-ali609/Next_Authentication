@@ -18,9 +18,8 @@ export default function LoginPage() {
   const onlogin = async () => {
     try {
       setLoading(true);
-      // const response = await axios.post("/api/users/login", user);
-      const response = await axios.post("https://next-authentication-nine-roan.vercel.app/api/users/login", user);
-
+      const response = await axios.post("/api/users/login", user);
+      
       console.log("login successful", response.data);
       toast.success("login successful!");
       router.push("/profile");
