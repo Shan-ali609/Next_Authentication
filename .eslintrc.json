@@ -1,0 +1,13 @@
+// {
+//   "extends": ["next/core-web-vitals", "next/typescript"]
+// }
+
+
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    // Disable specific rules
+    "no-console": "off", // Example: Disable the 'no-console' rule
+    "react/react-in-jsx-scope": "off" // Example: Disable the 'react/react-in-jsx-scope' rule
+  }
+}
