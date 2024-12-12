@@ -43,52 +43,60 @@ export default function SignupPage() {
   }, [user]);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen">
-      <p className="text-2xl flex justify-center items-center">
+    <div className="flex flex-col items-center justify-center  bg-gray-100  w-full h-screen">
+    <div className="flex flex-col items-center justify-center bg-white px-14 py-5 rounded-md shadow-lg">
+      <p className="text-3xl flex justify-center items-center font-bold">
         {loading ? "Processing..." : "Signup"}
       </p>
       <hr />
-      <label htmlFor="username" className="text-[16px]">
+      <div className="flex flex-col mb-3">
+      <label htmlFor="username" className="text-[18px]">
         Username
       </label>
       <input
-        className="border-2 border-black"
+        className="border-2 hover:border-black px-2"
         type="text"
         placeholder="Username.."
         value={user.username}
         onChange={(e) => setUser({ ...user, username: e.target.value })}
       />
+         </div>
 
-      <label htmlFor="email" className="text-[16px]">
+         <div className="flex flex-col mb-3">
+      <label htmlFor="email" className="text-[18px]">
         Email
       </label>
       <input
-        className="border-2 border-black"
+        className="border-2 hover:border-black px-2"
         type="email"
         placeholder="one@gmail.com"
         value={user.email}
         onChange={(e) => setUser({ ...user, email: e.target.value })}
       />
+        </div>
 
-      <label htmlFor="password" className="text-[16px]">
+      <div className="flex flex-col mb-2">
+
+      <label htmlFor="password" className="text-[18px]">
         Password
       </label>
       <input
-        className="border-2 border-black"
+        className="border-2 hover:border-black px-2"
         type="password"
         placeholder="Password"
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
       />
-
+        </div>
       <button
         onClick={onsignup}
-        className="bg-blue-400 px-3 mt-5"
+        className="bg-blue-400 px-3 py-2 rounded-md mt-5 cursor-pointer"
         disabled={disabled || loading}
       >
-        {loading ? "Processing..." : disabled ? "No Signup" : "Signup"}
+        {loading ? "Processing..." : disabled ? "Submit" : "Signup"}
       </button>
-      <Link href="/login">Visit login page</Link>
+      <Link className="text-blue-500 underline mt-1" href="/login">Visit login page</Link>
+    </div>
     </div>
   );
 }

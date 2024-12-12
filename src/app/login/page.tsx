@@ -43,41 +43,47 @@ export default function LoginPage() {
   }, [user]);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen">
-      <p className="text-2xl flex justify-center items-center">
+    <div className="flex items-center justify-center bg-gray-100  w-full h-screen">
+    <div className="flex flex-col items-center justify-center bg-white px-14 py-6 rounded-md shadow-lg ">
+      <p className="text-3xl flex justify-center items-center  font-bold">
         {loading ? "Processing..." : "Login"}
       </p>
       <hr />
-      <label htmlFor="email" className="text-[16px]">
+      <hr />
+      <div className="mt-3 flex flex-col">
+      <label htmlFor="email" className="text-[18px] text-left">
         Email
       </label>
       <input
-        className="border-2 border-black"
+        className="border-2 outline-none hover:border-black px-1"
         type="email"
         placeholder="one@gmail.com"
         value={user.email}
         onChange={(e) => setUser({ ...user, email: e.target.value })}
       />
+        </div>
 
-      <label htmlFor="password" className="text-[16px]">
+        <div className="mt-3 flex flex-col">
+      <label htmlFor="password" className="text-[18px]">
         Password
       </label>
       <input
-        className="border-2 border-black"
+        className="border-2 hover:border-black px-1"
         type="password"
         placeholder="Password"
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
       />
-
+          </div>
       <button
         onClick={onlogin}
-        className="bg-blue-400 px-3 mt-5"
+        className="bg-blue-400 px-3 py-2 rounded mt-5 cursor-pointer"
         disabled={disabled || loading}
       >
-        {loading ? "Processing..." : disabled ? "No login" : "login"}
+        {loading ? "Processing..." : disabled ? "Submit" : "login"}
       </button>
-      <Link href="/signup">Visit signup page</Link>
+      <Link className="mt-2 text-blue-500 underline" href="/signup">Visit signup page</Link>
+    </div>
     </div>
   );
 }
